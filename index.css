@@ -1,0 +1,104 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #24353f;
+}
+
+.box {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #24353f;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 0 0 30px black;
+    margin-top: 100px;
+}
+
+.box h1 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #17a2b8;
+}
+
+input{
+    width: 100%;
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid #aaa;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    font-size: 16px;
+}
+
+#logIn,.last {
+    display: block;
+    padding: 15px;
+    color: #4a8cac;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 20px;
+    border: 1px solid #4a8cac;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+
+.last:hover {
+    color: white;
+    transition: 0.5s;
+    background-color: #4a8cac;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+}
+p>a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+p>a:hover {
+    text-decoration: underline;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 3px black;
+}
+
+.nav .logo a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav #logOut a {
+    font-size: 20px;
+    color: white;
+    border: 1px solid yellowgreen;
+    padding: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+} 
+
+input[value] {
+    color: #4a8cac;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.welcom {
+    font-size: 40px;
+    font-weight: 500;
+    color: #17a2b8;
+}
