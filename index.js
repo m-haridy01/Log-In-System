@@ -18,12 +18,15 @@ var success = document.querySelector('.success')
 var InValid = document.querySelector('.InValid')
 var mainSection = document.querySelector('.main-box')
 
+
+
+
 var arr = []
 if(JSON.parse(window.localStorage.getItem('signData')) != null) {
     arr = JSON.parse(window.localStorage.getItem('signData'))
 }
 
-saveDataBtn.addEventListener('click',function() {
+function save() {
     if( validName() && validEmail() && validPassword() ) {
         var userData = {
             SignUserName: signUserNameInput.value,
@@ -39,7 +42,24 @@ saveDataBtn.addEventListener('click',function() {
         InValid.classList.remove('d-none')
         success.classList.add('d-none')
     }
-})
+}
+// saveDataBtn.addEventListener('click',function() {
+//     if( validName() && validEmail() && validPassword() ) {
+//         var userData = {
+//             SignUserName: signUserNameInput.value,
+//             SignEmail: signMailInput.value,
+//             SignPassword: signPassInput.value,
+//         }
+//         arr.push(userData)
+//         window.localStorage.setItem('signData', JSON.stringify(arr))
+//         success.classList.remove('d-none')
+//         InValid.classList.add('d-none')
+//         console.log(userData);
+//     }else{
+//         InValid.classList.remove('d-none')
+//         success.classList.add('d-none')
+//     }
+// })
 
 function validName() {
     var nameMsg = document.getElementById('nameMsg')
@@ -88,12 +108,15 @@ function goToLog() {
 function goToSign() {
     sinSection.classList.remove('d-none')
     logSection.classList.add('d-none')
+    clear() 
 }
 
 function clear() {
     signUserNameInput.value = ''
     signMailInput.value = ''
     signPassInput.value = ''
+    logMailInput.value = ''
+    logPassInput.value = ''
     success.classList.add('d-none')
     InValid.classList.add('d-none')
 }
@@ -125,3 +148,11 @@ function sweetAlert() {
         text: "incorrect email or password!",
     });
 }
+
+var logOutBtn = document.getElementById('logOut')
+
+logOutBtn.addEventListener('click',function () {
+    mainSection.classList.add('d-none')
+    sinSection.classList.remove('d-none')
+
+})
